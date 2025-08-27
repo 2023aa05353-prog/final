@@ -1,0 +1,23 @@
+{
+  "74829": {
+    "name": "Jane Doe",
+    "address": "123 Main St, Anytown, USA",
+    "current_plan": "Internet Basic",
+    "history": [
+      "2025-07-10: Called about slow speeds. Resolved by router reset.",
+      "2025-05-20: Inquired about premium TV packages.",
+      "2024-11-01: Signed up for 'Internet Basic' plan."
+    ],
+    "profile_notes": "Interested in premium services, low price sensitivity."
+  },
+  "99101": {
+    "name": "John Smith",
+    "address": "456 Oak Ave, Sometown, USA",
+    "current_plan": "Pro Fiber + TV Bundle",
+    "history": [
+      "2025-06-15: Called to confirm billing cycle.",
+      "2024-09-01: Upgraded to 'Pro Fiber + TV Bundle'."
+    ],
+    "profile_notes": "Long-time customer, values reliability."
+  }
+}

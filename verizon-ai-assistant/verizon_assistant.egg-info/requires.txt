@@ -1,0 +1,9 @@
+langgraph-supervisor
+langchain
+langchain-google-genai
+langchain_community
+faiss-cpu
+sentence-transformers
+python-dotenv
+langgraph-cli
+langgraph-sdk

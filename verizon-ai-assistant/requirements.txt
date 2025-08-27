@@ -1,0 +1,11 @@
+# requirements.txt
+langgraph-cli[inmem]
+langgraph-sdk
+langgraph-supervisor
+langchain
+langchain-google-genai
+langchain_community
+faiss-cpu
+sentence-transformers
+python-dotenv
+langchain-google-vertexai

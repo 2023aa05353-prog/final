@@ -1,0 +1,12 @@
+{
+    "name": "verizon-assistant",
+    "version": "0.1.0",
+    "graphs": {
+        "verizon_agent": {
+            "entrypoint": "C:\\Users\\infan\\Documents\\final\\verizon-ai-assistant\\main.py:graph",
+            "config": {
+                "type": "graph"
+            }
+        }
+    }
+}
