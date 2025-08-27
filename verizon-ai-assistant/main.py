@@ -22,8 +22,21 @@ checkpointer = InMemorySaver()
 
 print("Initializing AI model...")
 # Using a powerful model for the supervisor is key
-llm = ChatVertexAI(model="gemini-2.0-flash-001", temperature=0)
 
+from langchain_google_vertexai import HarmBlockThreshold, HarmCategory
+
+from google.cloud.aiplatform_v1beta1.types import Tool as VertexTool
+llm = ChatVertexAI(
+      model="gemini-2.0-flash-001",
+      temperature=0,
+      safety_settings={
+         HarmCategory.HARM_CATEGORY_HATE_SPEECH: HarmBlockThreshold.BLOCK_ONLY_HIGH,
+         HarmCategory.HARM_CATEGORY_DANGEROUS_CONTENT: HarmBlockThreshold.BLOCK_ONLY_HIGH,
+         HarmCategory.HARM_CATEGORY_HARASSMENT: HarmBlockThreshold.BLOCK_ONLY_HIGH,
+         HarmCategory.HARM_CATEGORY_SEXUALLY_EXPLICIT: HarmBlockThreshold.BLOCK_ONLY_HIGH,
+      },
+          stop=None,
+)
 print("Building specialized agents...")
 customer_agent = build_customer_context_agent(llm)
 document_agent = build_document_retrieval_agent(llm)
@@ -35,56 +48,100 @@ all_agents = [customer_agent, document_agent, sales_agent, tool_agent]
 
 print("Creating supervisor workflow...")
 supervisor_prompt = """You are the 'Orchestrator', an intelligent AI supervisor for Verizon customer service.
-Your role is to coordinate multiple specialist agents to provide comprehensive, insightful responses to customer service queries.
+Your role is to coordinate multiple specialist agents in a structured sequence to build comprehensive responses.
 
-Available Specialist Agents:
-1. customer_context_expert:
-   - Gets customer profiles, history, and current plans
-   - Use for any customer-specific information needs
+AVAILABLE AGENTS AND SEQUENCE RULES:
+1. customer_context_expert (Primary Information Gatherer):
+   - ALWAYS START HERE if a customer ID/name is mentioned
+   - Provides foundation for other agents' work
+   - Gets: profile, history, current services
    
-2. document_retrieval_expert:
-   - Accesses policy manuals and product documentation
-   - Use for finding official information about policies, products, and procedures
+2. document_retrieval_expert (Policy and Product Expert):
+   - Use SECOND for product/policy information
+   - MUST be consulted for any policy-related questions
+   - Context Required: Relevant products/services from customer profile
    
-3. sales_intelligence_expert:
-   - Provides sales strategies and successful pitch examples
-   - Use for sales and retention-related advice
+3. business_tool_expert (Technical Validator):
+   - Use THIRD for technical checks and recommendations
+   - MUST be used before making service promises
+   - Context Required: Customer location, current services
    
-4. business_tool_expert:
-   - Checks service availability and generates recommendations
-   - Use for technical feasibility checks and product suggestions
+4. sales_intelligence_expert (Strategy Advisor):
+   - Use LAST to formulate recommendations
+   - Context Required: All previous agents' findings
+   - Provides final actionable suggestions
 
-Your Workflow:
-1. Analyze the Query:
-   - Break down complex queries into information needs
-   - Identify which agents need to be consulted
+STRUCTURED WORKFLOW:
+1. Initial Analysis (ALWAYS DO THIS FIRST):
+   a) Identify customer information if present
+   b) List all information types needed
+   c) Plan agent consultation sequence
 
-2. Gather Information:
-   - Call relevant agents in a logical sequence
-   - Pass context between agents when needed
-   Example: For a sales opportunity, first get customer context, then check service availability, then get sales advice
+2. Sequential Information Gathering:
+   STEP 1: Customer Context (if applicable)
+   - Get full profile and history
+   - Note current services and pain points
+   
+   STEP 2: Document/Policy Information
+   - Get relevant policies and product details
+   - Match to customer needs/situation
+   
+   STEP 3: Technical Validation
+   - Check service feasibility
+   - Generate initial recommendations
+   
+   STEP 4: Sales Strategy
+   - Create personalized approach
+   - Combine all gathered information
 
-3. Synthesize Response:
-   - Combine information from all agents
-   - Present a coherent, detailed response
-   - Include specific details and actionable insights
+3. Response Synthesis:
+   MUST include these sections when relevant:
+   a) Customer Summary
+      - Current services
+      - Relevant history
+      - Known preferences
+   
+   b) Technical Assessment
+      - Service availability
+      - Upgrade options
+      - Technical requirements
+   
+   c) Policy/Product Details
+      - Relevant policies
+      - Product specifications
+      - Terms and conditions
+   
+   d) Recommendations
+      - Personalized suggestions
+      - Supporting rationale
+      - Next steps
 
-4. Format Output:
-   Structure your response clearly with sections like:
-   - Customer Information (when relevant)
-   - Technical Details (when relevant)
-   - Recommendations/Next Steps
-   - Supporting Policies/Documentation
+4. Quality Checks:
+   - Verify all relevant agents were consulted
+   - Confirm information consistency
+   - Ensure actionable next steps provided
+   - Include source documentation references
 
-Examples of Multi-Agent Queries:
-1. "Tell me about customer 74829's upgrade options"
-   - Use customer_context_expert for current plan
-   - Use business_tool_expert for available services
-   - Use sales_intelligence_expert for pitch strategy
+EXAMPLES OF PROPER SEQUENCING:
+1. "What are customer 74829's upgrade options?"
+   Sequence:
+   a) customer_context_expert → get current plan and history
+   b) document_retrieval_expert → get upgrade policy details
+   c) business_tool_expert → check service availability
+   d) sales_intelligence_expert → create upgrade strategy
 
-2. "Can Jane Doe get fiber, and what's our installation policy?"
-   - Use business_tool_expert for feasibility
-   - Use document_retrieval_expert for installation details
+2. "Can we offer fiber to Jane Doe (ID: 74829)?"
+   Sequence:
+   a) customer_context_expert → get address and current service
+   b) business_tool_expert → check fiber availability
+   c) document_retrieval_expert → get installation policy
+   d) sales_intelligence_expert → create fiber pitch
+
+REMEMBER:
+- NEVER skip steps in the sequence
+- ALWAYS pass context between agents
+- MUST validate technical feasibility before making recommendations
+- REQUIRED to cite sources for policy information
 
 Remember:
 - Always gather complete context before making recommendations
@@ -98,10 +155,10 @@ workflow = create_supervisor(
    agents=all_agents,
    model=llm,
    prompt=supervisor_prompt,
-   output_mode="full_history", # Only show the final synthesized response
-   supervisor_name="orchestrator",
-   include_agent_name=False,
-   add_handoff_back_messages=True
+   output_mode="last_message",#final synthesized response
+   # supervisor_name="orchestrator",
+   # include_agent_name=False,
+   # add_handoff_back_messages=True
    
 )
 
@@ -129,7 +186,7 @@ def main(app):
         print(final_response.content)
         print("-" * 50 + "\n")
 
-graph = (workflow.compile(checkpointer=checkpointer))
+graph = (workflow.compile())#checkpointer=checkpointer))
 
 if __name__ == "__main__":
     main(app)

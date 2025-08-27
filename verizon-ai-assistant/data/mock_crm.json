@@ -2,22 +2,92 @@
   "74829": {
     "name": "Jane Doe",
     "address": "123 Main St, Anytown, USA",
+    "email": "jane.doe@email.com",
+    "phone": "555-0123",
     "current_plan": "Internet Basic",
+    "monthly_bill": 79.99,
+    "join_date": "2024-11-01",
     "history": [
-      "2025-07-10: Called about slow speeds. Resolved by router reset.",
-      "2025-05-20: Inquired about premium TV packages.",
-      "2024-11-01: Signed up for 'Internet Basic' plan."
+      "2025-07-10: Called about slow speeds. Resolved by router reset. Technician noted outdated router model.",
+      "2025-05-20: Inquired about premium TV packages. Expressed interest in sports channels.",
+      "2025-03-15: Reported intermittent connection issues during peak hours.",
+      "2024-11-01: Signed up for 'Internet Basic' plan. Declined router rental."
     ],
-    "profile_notes": "Interested in premium services, low price sensitivity."
+    "profile_notes": "Interested in premium services, low price sensitivity. Works from home frequently. Tech-savvy.",
+    "household_size": 2,
+    "preferred_contact": "email"
   },
   "99101": {
     "name": "John Smith",
     "address": "456 Oak Ave, Sometown, USA",
+    "email": "jsmith@email.com",
+    "phone": "555-0456",
     "current_plan": "Pro Fiber + TV Bundle",
+    "monthly_bill": 159.99,
+    "join_date": "2023-05-15",
     "history": [
-      "2025-06-15: Called to confirm billing cycle.",
-      "2024-09-01: Upgraded to 'Pro Fiber + TV Bundle'."
+      "2025-06-15: Called to confirm billing cycle. Mentioned interest in mobile plans.",
+      "2025-03-20: Reported excellent satisfaction with fiber speeds.",
+      "2024-09-01: Upgraded to 'Pro Fiber + TV Bundle'. Added premium sports package.",
+      "2024-02-10: Requested information about fiber availability.",
+      "2023-05-15: Initial signup for basic TV package."
     ],
-    "profile_notes": "Long-time customer, values reliability."
+    "profile_notes": "Long-time customer, values reliability. Sports enthusiast. Multiple TVs in household.",
+    "household_size": 4,
+    "preferred_contact": "phone"
+  },
+  "85632": {
+    "name": "Maria Rodriguez",
+    "address": "789 Pine Lane, Westville, USA",
+    "email": "mrodriguez@email.com",
+    "phone": "555-0789",
+    "current_plan": "Gigabit Internet + Mobile",
+    "monthly_bill": 199.99,
+    "join_date": "2024-01-20",
+    "history": [
+      "2025-08-01: Added two additional mobile lines to family plan.",
+      "2025-06-10: Upgraded to Gigabit Internet.",
+      "2025-02-15: Reported positive experience with mobile service.",
+      "2024-01-20: Initial signup for Internet + Mobile bundle."
+    ],
+    "profile_notes": "Family-oriented customer. Heavy data user. Interested in smart home products.",
+    "household_size": 5,
+    "preferred_contact": "text"
+  },
+  "63014": {
+    "name": "Robert Chen",
+    "address": "321 Elm Court, Eastburg, USA",
+    "email": "rchen@email.com",
+    "phone": "555-0321",
+    "current_plan": "Business Pro Fiber",
+    "monthly_bill": 299.99,
+    "join_date": "2024-03-05",
+    "history": [
+      "2025-07-25: Requested information about backup internet solutions.",
+      "2025-05-05: Added static IP address to account.",
+      "2025-04-01: Upgraded to Business Pro Fiber plan.",
+      "2024-03-05: Initial signup for Business Basic Internet."
+    ],
+    "profile_notes": "Small business owner. Requires reliable connection for POS system. Interest in business phone solutions.",
+    "household_size": 1,
+    "preferred_contact": "email"
+  },
+  "52147": {
+    "name": "Sarah Johnson",
+    "address": "147 Maple Dr, Northtown, USA",
+    "email": "sjohnson@email.com",
+    "phone": "555-0147",
+    "current_plan": "Basic TV + Internet",
+    "monthly_bill": 89.99,
+    "join_date": "2025-01-10",
+    "history": [
+      "2025-08-15: Discussed upgrade options for streaming services.",
+      "2025-05-30: Requested bill explanation. Provided detailed breakdown.",
+      "2025-03-20: Reported TV signal issues. Resolved with box reset.",
+      "2025-01-10: New customer signup with promotional rate."
+    ],
+    "profile_notes": "Price-conscious customer. Interested in streaming services. Regular viewer of local channels.",
+    "household_size": 3,
+    "preferred_contact": "phone"
   }
 }

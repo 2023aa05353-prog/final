@@ -3,7 +3,7 @@ import json
 from langchain_core.tools import tool
 
 def _load_crm_data():
-    with open(r"C:\Users\infan\Documents\final\verizon-ai-assistant\data\mock_crm.json", "r") as f:
+    with open("/workspaces/miniconda/final/verizon-ai-assistant/data/mock_crm.json", "r") as f:
         return json.load(f)
 
 @tool

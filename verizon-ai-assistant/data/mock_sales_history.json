@@ -1,12 +1,52 @@
 [
   {
-    "customer_profile": "Similar to Jane Doe; interested in high performance, low price sensitivity.",
+    "sale_id": "S2025081",
+    "date": "2025-08-15",
+    "customer_profile": "Professional working from home, tech-savvy, values high performance, low price sensitivity",
+    "pain_points": ["Slow internet during video calls", "Gaming latency issues", "Multiple streaming devices"],
     "successful_pitch": "Emphasized the benefit of the 'Pro Fiber' plan for seamless 4K streaming and gaming, highlighting that the professional installation was included for free. This created a sense of value beyond just the monthly price.",
-    "product_sold": "Pro Fiber Internet"
+    "product_sold": "Pro Fiber Internet",
+    "sale_value": 129.99,
+    "additional_notes": "Customer particularly interested in upload speeds for video conferencing"
   },
   {
-    "customer_profile": "Family with multiple devices, concerned about bandwidth.",
+    "sale_id": "S2025082",
+    "date": "2025-08-10",
+    "customer_profile": "Family with 4 children, multiple devices, concerned about bandwidth and entertainment options",
+    "pain_points": ["Current provider has frequent buffering", "High cost of separate streaming services", "Need parental controls"],
     "successful_pitch": "Focused on how the 'Pro Fiber + TV Bundle' supports simultaneous streaming, remote work, and online schooling without any slowdowns. The bundle saving was a secondary benefit that sealed the deal.",
-    "product_sold": "Pro Fiber + TV Bundle"
+    "product_sold": "Pro Fiber + TV Bundle",
+    "sale_value": 159.99,
+    "additional_notes": "Bundle included premium kids' channels package"
+  },
+  {
+    "sale_id": "S2025083",
+    "date": "2025-08-05",
+    "customer_profile": "Small business owner, retail shop, requires reliable connection for POS and security systems",
+    "pain_points": ["Current internet unreliable during peak hours", "Need technical support outside business hours", "Concerned about security"],
+    "successful_pitch": "Highlighted Business Pro Fiber's 99.99% uptime guarantee and 24/7 priority support. Demonstrated cost savings versus potential lost sales from internet downtime.",
+    "product_sold": "Business Pro Fiber",
+    "sale_value": 299.99,
+    "additional_notes": "Included static IP and enhanced security features"
+  },
+  {
+    "sale_id": "S2025084",
+    "date": "2025-08-01",
+    "customer_profile": "Young couple, budget-conscious, mainly uses internet for streaming and social media",
+    "pain_points": ["Current bill too high", "Don't need traditional TV", "Want reliable streaming"],
+    "successful_pitch": "Presented Internet Basic + Streaming Bundle as perfect for digital lifestyle. Emphasized no contract requirement and first-month satisfaction guarantee.",
+    "product_sold": "Internet Basic + Streaming Bundle",
+    "sale_value": 89.99,
+    "additional_notes": "Added streaming device at promotional price"
+  },
+  {
+    "sale_id": "S2025085",
+    "date": "2025-07-28",
+    "customer_profile": "Mobile professional, frequently travels, needs reliable phone and internet service",
+    "pain_points": ["Multiple bills for different services", "Inconsistent coverage", "Data usage concerns"],
+    "successful_pitch": "Demonstrated cost savings of Mobile + Home Internet bundle. Highlighted nationwide coverage and unlimited data benefits.",
+    "product_sold": "5G Home + Mobile Bundle",
+    "sale_value": 199.99,
+    "additional_notes": "Customer interested in future smart home integration"
   }
 ]

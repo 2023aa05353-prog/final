@@ -1,0 +1,95 @@
+VERIZON SERVICE PLANS AND PRODUCTS
+
+Internet Plans
+-------------
+1. Internet Basic
+- Download speeds up to 200 Mbps
+- Upload speeds up to 100 Mbps
+- Ideal for browsing, email, and standard streaming
+- Wi-Fi router included
+- Price: $49.99/month with autopay
+- No annual contract required
+
+2. Pro Fiber
+- Download speeds up to 940 Mbps
+- Upload speeds up to 880 Mbps
+- Perfect for 4K streaming, gaming, and remote work
+- Advanced Wi-Fi 6 router included
+- Price: $89.99/month with autopay
+- Optional network security add-on: $10/month
+
+3. Gigabit Connection
+- Download speeds up to 2.3 Gbps
+- Upload speeds up to 2.1 Gbps
+- Ultimate performance for multiple 4K/8K streams
+- Wi-Fi 6E router included
+- Price: $129.99/month with autopay
+- Includes network security
+
+TV Packages
+----------
+1. Basic TV
+- 125+ channels
+- Local channels included
+- HD programming
+- Price: $50/month
+
+2. Premium TV
+- 300+ channels
+- Sports packages available
+- Premium movie channels
+- Cloud DVR included
+- Price: $89.99/month
+
+3. Ultimate TV
+- 425+ channels
+- All premium channels included
+- Unlimited Cloud DVR
+- International channels available
+- Price: $129.99/month
+
+Mobile Plans
+-----------
+1. Basic Mobile
+- Unlimited talk and text
+- 15GB premium data
+- 5G nationwide access
+- Mobile hotspot: 5GB
+- Price: $65/month per line
+
+2. Pro Mobile
+- Unlimited premium data
+- 5G Ultra Wideband
+- 25GB mobile hotspot
+- International text/data
+- Price: $80/month per line
+
+3. Ultimate Mobile
+- Unlimited premium data
+- 5G Ultra Wideband
+- 50GB mobile hotspot
+- International text/data/talk
+- Apple Music included
+- Price: $90/month per line
+
+Business Solutions
+----------------
+1. Business Internet Basic
+- 300 Mbps symmetric speeds
+- Static IP available
+- 24/7 business support
+- Price: $99.99/month
+
+2. Business Pro Fiber
+- 1 Gbps symmetric speeds
+- Multiple static IPs
+- Priority support
+- Advanced security
+- Price: $199.99/month
+
+3. Business Ultimate
+- 2.3 Gbps symmetric speeds
+- Enterprise-grade security
+- Dedicated support team
+- SLA guaranteed uptime
+- Price: $299.99/month
